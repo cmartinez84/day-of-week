@@ -15,9 +15,9 @@
     });
 
     $app->post("/result", function() use ($app) {
-        $newScrabbleScore = new ScrabbleScore();
-        $score = $newScrabbleScore->getWordScore($_POST['input_word']);
-        return $app['twig']->render('home.html.twig', array('score' => $score));
+        $newDayOfWeek = new DayOfWeek;
+        $day = $newDayOfWeek->getDayOfWeek($_POST['month'], $_POST['date'], $_POST['year']);
+        return $app['twig']->render('home.html.twig', array('day' => $day));
     });
 
     return $app;
