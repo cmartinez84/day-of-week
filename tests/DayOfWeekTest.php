@@ -1,25 +1,64 @@
 <?php
-    require_once "src/ScrabbleScore.php";
-    class ScrabbleScoreTest extends PHPUnit_Framework_TestCase
+    require_once "src/DayOfWeek.php";
+    class DayOfWeekTest extends PHPUnit_Framework_TestCase
     {
-        function test_getLetterScore()
+        function test_getYearCode()
         {
             //Arrange
-            $test_ScrabbleScore = new ScrabbleScore;
-            $letter = "A";
+            $test_DayOfWeek = new DayOfWeek;
+            $year = 2016;
             //Act
-            $output = $test_ScrabbleScore->getLetterScore($letter);
+            $output = $test_DayOfWeek->getYearCode($year);
             //Assert
-            $this->assertEquals(1, $output);
+            $this->assertEquals(6, $output);
         }
-        function test_getWordScore(){
-            $test_getWordScore = new ScrabbleScore;
-            $word = "rqhrjkqhrjkhq";
 
-            $output = $test_getWordScore->getWordScore($word);
-
-            $this->assertEquals("An imaginary scrabble letter has been entered, TRY AGAIN!", $output);
+        function test_getMonthCode()
+        {
+            //Arrange
+            $test_DayOfWeek = new DayOfWeek;
+            $month = 9;
+            //Act
+            $output = $test_DayOfWeek->getMonthCode($month);
+            //Assert
+            $this->assertEquals(5, $output);
         }
+        function test_getCenturyCode()
+        {
+            //Arrange
+            $test_DayOfWeek = new DayOfWeek;
+            $year = 2016;
+            //Act
+            $output = $test_DayOfWeek->getCenturyCode($year);
+            //Assert
+            $this->assertEquals(6, $output);
+        }
+
+        function test_getLeapYearCode()
+        {
+            //Arrange
+            $test_DayOfWeek = new DayOfWeek;
+            $month = 9;
+            //Act
+            $output = $test_DayOfWeek->getLeapYearCode($month);
+            //Assert
+            $this->assertEquals(0, $output);
+        }
+
+        function test_getDayOfWeek()
+        {
+            //Arrange
+            $test_DayOfWeek = new DayOfWeek;
+            $month = 9;
+            $day = 15;
+            $year = 2016;
+
+            //Act
+            $output = $test_DayOfWeek->getDayOfWeek($month, $day, $year);
+            //Assert
+            $this->assertEquals("Thursday", $output);
+        }
+
 
 
     }

@@ -11,8 +11,12 @@ _This is a web page which suggests which coding track to take based on user inpu
 ## Specifications
 | Behavior | Input Ex. | Output Ex. |
 | --- | --- | --- |
-| Get one letter and return score of that letter |  A |  1 |
-| Get a string of letters and return score of that string |  AT |  2 |
+| Determine Year Code from Year |  2016 |  6 |
+| Determine Month Code from Month |  9 |  5 |
+| Determine Century Code from Century |  2016 |  6 |
+| Determine Date Number from Date Number |  15 |  15 |
+| Determine Leap Year Code from Month |  9 |  0 |
+| Determine Day of Week from Date |  9/15/2016 |  "Thursday" |
 
 
 ## Setup/Installation Requirements
